@@ -7,7 +7,7 @@ function TodoList() {
   const [todos, setTodos] = useState([]);
 
   const publishLatest = () => {
-    axios.get('http://localhost:3000/get-todos')
+    axios.get('https://grocery-todo-backend.onrender.com/get-todos')
     .then(function (response) {
       console.log(response.data.data);
       setTodos(response.data.data);
@@ -32,7 +32,7 @@ function TodoList() {
     bodyFormData.append('item_name', todo.text);
     axios({
       method: "post",
-      url: "http://localhost:3000/add-todo",
+      url: "https://grocery-todo-backend.onrender.com/add-todo",
       data: bodyFormData,
       headers: { "Content-Type": "multipart/form-data" },
     })
@@ -62,7 +62,7 @@ function TodoList() {
     bodyFormData.append('item_name', newValue.text);
     axios({
       method: "post",
-      url: "http://localhost:3000/update-todo",
+      url: "https://grocery-todo-backend.onrender.com/update-todo",
       data: bodyFormData,
       headers: { "Content-Type": "multipart/form-data" },
     })
@@ -85,7 +85,7 @@ function TodoList() {
     bodyFormData.append('item_id', id);
     axios({
       method: "post",
-      url: "http://localhost:3000/remove-todo",
+      url: "https://grocery-todo-backend.onrender.com/remove-todo",
       data: bodyFormData,
       headers: { "Content-Type": "multipart/form-data" },
     })
